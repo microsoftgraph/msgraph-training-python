@@ -54,12 +54,14 @@ def initialize_graph(settings: configparser.SectionProxy):
     graph.initialize_graph_for_user_auth(settings)
 # </InitializeGraphSnippet>
 
+# <GreetUserSnippet>
 def greet_user():
     user = graph.get_user()
     print('Hello,', user['displayName'])
     # For Work/school accounts, email is in mail property
     # Personal accounts, email is in userPrincipalName
     print('Email:', user['mail'] or user['userPrincipalName'], '\n')
+# </GreetUserSnippet>
 
 # <DisplayAccessTokenSnippet>
 def display_access_token():
