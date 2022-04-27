@@ -1,0 +1,17 @@
+azure-core==1.23.1
+azure-identity==1.9.0
+certifi==2021.10.8
+cffi==1.15.0
+charset-normalizer==2.0.12
+cryptography==37.0.0
+idna==3.3
+msal==1.17.0
+msal-extensions==0.3.1
+msgraph-core==0.2.2
+portalocker==2.4.0
+pycparser==2.21
+PyJWT==2.3.0
+requests==2.27.1
+six==1.16.0
+typing_extensions==4.2.0
+urllib3==1.26.9
