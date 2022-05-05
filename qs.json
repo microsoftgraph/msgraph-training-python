@@ -1,0 +1,7 @@
+{
+    "sourceDirectory": "./demo",
+    "exampleConfigFile": "./graphtutorial/config.cfg",
+    "configFile": "config.cfg",
+    "archiveFile": "PythonQuickStart.zip",
+    "zipReadMe": "./README.md"
+}

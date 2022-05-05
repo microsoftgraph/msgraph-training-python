@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 config.dev.cfg
+*.zip
