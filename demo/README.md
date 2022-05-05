@@ -121,5 +121,6 @@ To use PowerShell, you'll need the Microsoft Graph PowerShell SDK. If you do not
 In your command-line interface (CLI), navigate to the project directory and run the following command.
 
 ```Shell
+python3 -m pip install -r requirements.txt
 python3 main.py
 ```
