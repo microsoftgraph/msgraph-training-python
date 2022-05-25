@@ -11,9 +11,9 @@ def main():
     # Load settings
     config = configparser.ConfigParser()
     config.read(['config.cfg', 'config.dev.cfg'])
-    azureSettings = config['azure']
+    azure_settings = config['azure']
 
-    initialize_graph(azureSettings)
+    initialize_graph(azure_settings)
 
     greet_user()
 
@@ -30,7 +30,7 @@ def main():
 
         try:
             choice = int(input())
-        except:
+        except ValueError:
             choice = -1
 
         if choice == 0:
@@ -94,7 +94,6 @@ def send_mail():
 
     graph.send_mail('Testing Microsoft Graph', 'Hello world!', user_email)
     print('Mail sent.\n')
-    return
 # </SendMailSnippet>
 
 # <ListUsersSnippet>
