@@ -34,7 +34,7 @@ def get_user():
     select = 'displayName,mail,userPrincipalName'
     request_url = f'{endpoint}?$select={select}'
 
-    user_response = this.user_client.get(request_url)
+    user_response = this.user_client.gret(request_url)
     return user_response.json()
 # </GetUserSnippet>
 
