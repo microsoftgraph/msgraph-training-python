@@ -4,7 +4,6 @@
 # <UserAuthConfigSnippet>
 import json
 from configparser import SectionProxy
-from types import NoneType
 from azure.identity import DeviceCodeCredential, ClientSecretCredential
 from msgraph.core import GraphClient
 
@@ -116,6 +115,7 @@ class Graph:
     # </GetUsersSnippet>
 
     # <MakeGraphCallSnippet>
+    # pylint: disable-next=no-self-use
     def make_graph_call(self):
         # INSERT YOUR CODE HERE
         # Note: if using app_client, be sure to call
