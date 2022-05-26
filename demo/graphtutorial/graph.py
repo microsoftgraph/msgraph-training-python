@@ -110,7 +110,7 @@ class Graph:
         order_by = 'displayName'
         request_url = f'{endpoint}?$select={select}&$top={top}&$orderBy={order_by}'
 
-        users_response = self.app_client.gret(request_url)
+        users_response = self.app_client.get(request_url)
         return users_response.json()
     # </GetUsersSnippet>
 
