@@ -3,7 +3,7 @@
 
 # <ProgramSnippet>
 import configparser
-import graph
+from graph import Graph
 
 def main():
     print('Python Graph Tutorial\n')
@@ -11,11 +11,11 @@ def main():
     # Load settings
     config = configparser.ConfigParser()
     config.read(['config.cfg', 'config.dev.cfg'])
-    azureSettings = config['azure']
+    azure_settings = config['azure']
 
-    initialize_graph(azureSettings)
+    graph: Graph = Graph(azure_settings)
 
-    greet_user()
+    greet_user(graph)
 
     choice = -1
 
@@ -30,32 +30,27 @@ def main():
 
         try:
             choice = int(input())
-        except:
+        except ValueError:
             choice = -1
 
         if choice == 0:
             print('Goodbye...')
         elif choice == 1:
-            display_access_token()
+            display_access_token(graph)
         elif choice == 2:
-            list_inbox()
+            list_inbox(graph)
         elif choice == 3:
-            send_mail()
+            send_mail(graph)
         elif choice == 4:
-            list_users()
+            list_users(graph)
         elif choice == 5:
-            make_graph_call()
+            make_graph_call(graph)
         else:
             print('Invalid choice!\n')
 # </ProgramSnippet>
 
-# <InitializeGraphSnippet>
-def initialize_graph(settings: configparser.SectionProxy):
-    graph.initialize_graph_for_user_auth(settings)
-# </InitializeGraphSnippet>
-
 # <GreetUserSnippet>
-def greet_user():
+def greet_user(graph: Graph):
     user = graph.get_user()
     print('Hello,', user['displayName'])
     # For Work/school accounts, email is in mail property
@@ -64,13 +59,13 @@ def greet_user():
 # </GreetUserSnippet>
 
 # <DisplayAccessTokenSnippet>
-def display_access_token():
+def display_access_token(graph: Graph):
     token = graph.get_user_token()
     print('User token:', token, '\n')
 # </DisplayAccessTokenSnippet>
 
 # <ListInboxSnippet>
-def list_inbox():
+def list_inbox(graph: Graph):
     message_page = graph.get_inbox()
 
     # Output each message's details
@@ -86,7 +81,7 @@ def list_inbox():
 # </ListInboxSnippet>
 
 # <SendMailSnippet>
-def send_mail():
+def send_mail(graph: Graph):
     # Send mail to the signed-in user
     # Get the user for their email address
     user = graph.get_user()
@@ -94,11 +89,10 @@ def send_mail():
 
     graph.send_mail('Testing Microsoft Graph', 'Hello world!', user_email)
     print('Mail sent.\n')
-    return
 # </SendMailSnippet>
 
 # <ListUsersSnippet>
-def list_users():
+def list_users(graph: Graph):
     users_page = graph.get_users()
 
     # Output each users's details
@@ -113,7 +107,7 @@ def list_users():
 # </ListUsersSnippet>
 
 # <MakeGraphCallSnippet>
-def make_graph_call():
+def make_graph_call(graph: Graph):
     graph.make_graph_call()
 # </MakeGraphCallSnippet>
 

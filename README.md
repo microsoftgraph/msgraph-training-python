@@ -1,8 +1,6 @@
-# msgraph-training-python
-Completed project for Build Python apps with Microsoft Graph
-
-
 # Build Python apps with Microsoft Graph - Completed project
+
+[![Pylint](https://github.com/microsoftgraph/msgraph-training-python/actions/workflows/pylint.yml/badge.svg)](https://github.com/microsoftgraph/msgraph-training-python/actions/workflows/pylint.yml)
 
 This sample will introduce you to working with the Microsoft Graph SDK to access data in Microsoft 365 from Python applications. This code is the result of completing the [Python Microsoft Graph tutorial](https://docs.microsoft.com/graph/tutorials/python).
 
