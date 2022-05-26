@@ -18,6 +18,7 @@ def initialize_graph_for_user_auth(config):
 
     this.device_code_credential = DeviceCodeCredential(client_id, tenant_id = tenant_id)
     this.user_client = GraphClient(credential=this.device_code_credential, scopes=graph_scopes)
+    this.user_client.foo('')
 # </UserAuthConfigSnippet>
 
 # <GetUserTokenSnippet>
@@ -35,6 +36,7 @@ def get_user():
     request_url = f'{endpoint}?$select={select}'
 
     user_response = this.user_client.gret(request_url)
+    foo = bar
     return user_response.json()
 # </GetUserSnippet>
 
