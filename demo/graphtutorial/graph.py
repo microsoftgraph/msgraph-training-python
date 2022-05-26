@@ -4,13 +4,19 @@
 # <UserAuthConfigSnippet>
 import json
 from configparser import SectionProxy
+from types import NoneType
 from azure.identity import DeviceCodeCredential, ClientSecretCredential
 from msgraph.core import GraphClient
 
 class Graph:
+    settings: SectionProxy
+    device_code_credential: DeviceCodeCredential
+    user_client: GraphClient
+    client_credential: ClientSecretCredential
+    app_client: GraphClient
 
     def __init__(self, config: SectionProxy):
-        self.settings: SectionProxy = config
+        self.settings = config
         client_id = self.settings['clientId']
         tenant_id = self.settings['authTenant']
         graph_scopes = self.settings['graphUserScopes'].split(' ')
@@ -85,11 +91,11 @@ class Graph:
             tenant_id = self.settings['tenantId']
             client_secret = self.settings['clientSecret']
 
-            self.client_credential: ClientSecretCredential = ClientSecretCredential(tenant_id, client_id, client_secret)
+            self.client_credential = ClientSecretCredential(tenant_id, client_id, client_secret)
 
         if not hasattr(self, 'app_client'):
-            self.app_client: GraphClient = GraphClient(credential=self.client_credential,
-                                                       scopes=['https://graph.microsoft.com/.default'])
+            self.app_client = GraphClient(credential=self.client_credential,
+                                          scopes=['https://graph.microsoft.com/.default'])
     # </AppOnyAuthConfigSnippet>
 
     # <GetUsersSnippet>
