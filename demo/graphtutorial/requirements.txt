@@ -1,4 +1,4 @@
-azure-core==1.23.1
+azure-core==1.24.0
 azure-identity==1.10.0
 certifi==2021.10.8
 cffi==1.15.0
