@@ -5,7 +5,7 @@ cffi==1.15.0
 charset-normalizer==2.0.12
 cryptography==37.0.2
 idna==3.3
-msal==1.17.0
+msal==1.18.0
 msal-extensions==1.0.0
 msgraph-core==0.2.2
 portalocker==2.4.0
