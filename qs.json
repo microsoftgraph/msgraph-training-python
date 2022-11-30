@@ -1,5 +1,5 @@
 {
-    "sourceDirectory": "./demo",
+    "sourceDirectory": "./user-auth",
     "exampleConfigFile": "./graphtutorial/config.cfg",
     "configFile": "config.cfg",
     "archiveFile": "PythonQuickStart.zip",
