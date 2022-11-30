@@ -89,7 +89,7 @@ class Graph:
         to_recipient = Recipient()
         to_recipient.email_address = EmailAddress()
         to_recipient.email_address.address = recipient
-        message.to_recipients = list[Recipient]()
+        message.to_recipients = []
         message.to_recipients.append(to_recipient)
 
         request_body = SendMailPostRequestBody()
