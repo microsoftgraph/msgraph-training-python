@@ -4,7 +4,9 @@
 # <AppAuthConfigSnippet>
 from configparser import SectionProxy
 from azure.identity.aio import ClientSecretCredential
-from kiota_authentication_azure.azure_identity_authentication_provider import AzureIdentityAuthenticationProvider
+from kiota_authentication_azure.azure_identity_authentication_provider import (
+    AzureIdentityAuthenticationProvider
+)
 from msgraph import GraphRequestAdapter, GraphServiceClient
 from msgraph.generated.users.users_request_builder import UsersRequestBuilder
 
