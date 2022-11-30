@@ -21,22 +21,22 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies (user auth)
-      working-directory: /user-auth/graphtutorial
+      working-directory: user-auth/graphtutorial
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pylint
     - name: Analyzing the code with pylint (user auth)
-      working-directory: /user-auth/graphtutorial
+      working-directory: user-auth/graphtutorial
       run: |
         pylint $(git ls-files '*.py')
     - name: Install dependencies (app auth)
-      working-directory: /app-auth/graphapponlytutorial
+      working-directory: app-auth/graphapponlytutorial
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pylint
     - name: Analyzing the code with pylint (app auth)
-      working-directory: /app-auth/graphapponlytutorial
+      working-directory: app-auth/graphapponlytutorial
       run: |
         pylint $(git ls-files '*.py')
