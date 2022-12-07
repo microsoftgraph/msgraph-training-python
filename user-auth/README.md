@@ -11,7 +11,7 @@ To run the completed project in this folder, you need the following:
 
 ## Register an application
 
-You can register an application using the Azure Active Directory admin center, or by using the [Microsoft Graph PowerShell SDK](https://docs.microsoft.com/graph/powershell/get-started).
+You can register an application using the Azure Active Directory admin center, or by using the [Microsoft Graph PowerShell SDK](https://learn.microsoft.com/graph/powershell/get-started).
 
 ### Azure Active Directory admin center
 
@@ -37,7 +37,7 @@ You can register an application using the Azure Active Directory admin center, o
 
 ### PowerShell
 
-To use PowerShell, you'll need the Microsoft Graph PowerShell SDK. If you do not have it, see [Install the Microsoft Graph PowerShell SDK](https://docs.microsoft.com/graph/powershell/installation) for installation instructions.
+To use PowerShell, you'll need the Microsoft Graph PowerShell SDK. If you do not have it, see [Install the Microsoft Graph PowerShell SDK](https://learn.microsoft.com/graph/powershell/installation) for installation instructions.
 
 1. Open PowerShell and run the [RegisterAppForUserAuth.ps1](RegisterAppForUserAuth.ps1) file with the following command, replacing *&lt;audience-value&gt;* with the desired value (see table below).
 
@@ -71,7 +71,7 @@ To use PowerShell, you'll need the Microsoft Graph PowerShell SDK. If you do not
     | `clientId` | The client ID of your app registration |
     | `tenantId` | If you chose the option to only allow users in your organization to sign in, change this value to your tenant ID. Otherwise leave as `common`. |
 
-## Build and run the sample
+## Run the sample
 
 In your command-line interface (CLI), navigate to the project directory and run the following command.
 
