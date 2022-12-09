@@ -10,7 +10,7 @@ assignees: ''
 **Where did you get the code?**
 - [ ] Downloaded from GitHub
 - [ ] Downloaded from the [Microsoft Graph quick start tool](https://developer.microsoft.com/graph/quick-start)
-- [ ] Followed the tutorial from [Microsoft Graph tutorials](https://docs.microsoft.com/graph/tutorials)
+- [ ] Followed the tutorial from [Microsoft Graph tutorials](https://learn.microsoft.com/graph/tutorials)
 
 **Describe the bug**
 A clear and concise description of what the bug is.
@@ -35,7 +35,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Dependency versions**
  - Authentication library (MSAL, etc.) version:
- - Graph library (Graph SDK, REST library, etc.) version:  
+ - Graph library (Graph SDK, REST library, etc.) version:
 
 **Additional context**
 Add any other context about the problem here.
