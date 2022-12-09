@@ -6,6 +6,10 @@
 version: 2
 updates:
   - package-ecosystem: "pip" # See documentation for possible values
-    directory: "/demo/graphtutorial" # Location of package manifests
+    directory: "/user-auth/graphtutorial" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pip" # See documentation for possible values
+    directory: "/app-auth/graphapponlytutorial" # Location of package manifests
     schedule:
       interval: "weekly"

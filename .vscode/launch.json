@@ -8,8 +8,17 @@
             "name": "Python: main",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/demo/graphtutorial/main.py",
-            "cwd": "${workspaceFolder}/demo/graphtutorial",
+            "program": "${workspaceFolder}/user-auth/graphtutorial/main.py",
+            "cwd": "${workspaceFolder}/user-auth/graphtutorial",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: main (app-only)",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/app-auth/graphapponlytutorial/main.py",
+            "cwd": "${workspaceFolder}/app-auth/graphapponlytutorial",
             "console": "integratedTerminal",
             "justMyCode": true
         }
