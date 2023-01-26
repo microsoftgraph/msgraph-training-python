@@ -71,10 +71,10 @@ async def list_inbox(graph: Graph):
         for message in message_page.value:
             print('Message:', message.subject)
             if (
-                message.from_escaped is not None and
-                message.from_escaped.email_address is not None
+                message.from_ is not None and
+                message.from_.email_address is not None
             ):
-                print('  From:', message.from_escaped.email_address.name or 'NONE')
+                print('  From:', message.from_.email_address.name or 'NONE')
             else:
                 print('  From: NONE')
             print('  Status:', 'Read' if message.is_read else 'Unread')

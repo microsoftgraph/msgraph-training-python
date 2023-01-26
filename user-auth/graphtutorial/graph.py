@@ -3,6 +3,7 @@
 
 # <UserAuthConfigSnippet>
 from configparser import SectionProxy
+from azure.identity import DeviceCodeCredential
 from kiota_authentication_azure.azure_identity_authentication_provider import (
     AzureIdentityAuthenticationProvider)
 from msgraph import GraphRequestAdapter, GraphServiceClient
@@ -15,11 +16,10 @@ from msgraph.generated.models.item_body import ItemBody
 from msgraph.generated.models.body_type import BodyType
 from msgraph.generated.models.recipient import Recipient
 from msgraph.generated.models.email_address import EmailAddress
-from async_auth import AsyncDeviceCodeCredential
 
 class Graph:
     settings: SectionProxy
-    device_code_credential: AsyncDeviceCodeCredential
+    device_code_credential: DeviceCodeCredential
     adapter: GraphRequestAdapter
     user_client: GraphServiceClient
 
@@ -29,7 +29,7 @@ class Graph:
         tenant_id = self.settings['tenantId']
         graph_scopes = self.settings['graphUserScopes'].split(' ')
 
-        self.device_code_credential = AsyncDeviceCodeCredential(client_id, tenant_id = tenant_id)
+        self.device_code_credential = DeviceCodeCredential(client_id, tenant_id = tenant_id)
         auth_provider = AzureIdentityAuthenticationProvider(
             self.device_code_credential,
             scopes=graph_scopes)
@@ -40,7 +40,7 @@ class Graph:
     # <GetUserTokenSnippet>
     async def get_user_token(self):
         graph_scopes = self.settings['graphUserScopes']
-        access_token = await self.device_code_credential.get_token(graph_scopes)
+        access_token = self.device_code_credential.get_token(graph_scopes)
         return access_token.token
     # </GetUserTokenSnippet>
 
@@ -54,7 +54,7 @@ class Graph:
             query_parameters=query_params
         )
 
-        user = await self.user_client.me().get(request_configuration=request_config)
+        user = await self.user_client.me.get(request_configuration=request_config)
         return user
     # </GetUserSnippet>
 
@@ -72,7 +72,7 @@ class Graph:
             query_parameters= query_params
         )
 
-        messages = await self.user_client.me().mail_folders_by_id('inbox').messages().get(
+        messages = await self.user_client.me.mail_folders_by_id('inbox').messages.get(
                 request_configuration=request_config)
         return messages
     # </GetInboxSnippet>
@@ -95,11 +95,24 @@ class Graph:
         request_body = SendMailPostRequestBody()
         request_body.message = message
 
-        await self.user_client.me().send_mail().post(body=request_body)
+        await self.user_client.me.send_mail.post(body=request_body)
     # </SendMailSnippet>
 
     # <MakeGraphCallSnippet>
     async def make_graph_call(self):
         # INSERT YOUR CODE HERE
+        # Auth provider
+        #auth_provider = AzureIdentityAuthenticationProvider(...)
+
+        # Get default middleware
+        #middleware = GraphClientFactory.get_default_middleware()
+
+        # Add custom middleware
+        # Implement a custom middleware by extending the BaseMiddleware class
+        # https://github.com/microsoft/kiota-http-go/blob/main/kiota_http/middleware/middleware.py
+        #middleware.append(MyCustomMiddleware())
+
+        # Create an HTTP client with the middleware
+        #client = GraphClientFactory().create_with_custom_middleware(middleware)
         return
     # </MakeGraphCallSnippet>

@@ -49,7 +49,7 @@ class Graph:
             query_parameters=query_params
         )
 
-        users = await self.app_client.users().get(request_configuration=request_config)
+        users = await self.app_client.users.get(request_configuration=request_config)
         return users
     # </GetUsersSnippet>
 
