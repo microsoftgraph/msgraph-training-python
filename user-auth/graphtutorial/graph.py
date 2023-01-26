@@ -2,6 +2,7 @@
 # Licensed under the MIT License.
 
 # <UserAuthConfigSnippet>
+from azure.identity import DeviceCodeCredential
 from configparser import SectionProxy
 from kiota_authentication_azure.azure_identity_authentication_provider import (
     AzureIdentityAuthenticationProvider)
@@ -15,11 +16,10 @@ from msgraph.generated.models.item_body import ItemBody
 from msgraph.generated.models.body_type import BodyType
 from msgraph.generated.models.recipient import Recipient
 from msgraph.generated.models.email_address import EmailAddress
-from async_auth import AsyncDeviceCodeCredential
 
 class Graph:
     settings: SectionProxy
-    device_code_credential: AsyncDeviceCodeCredential
+    device_code_credential: DeviceCodeCredential
     adapter: GraphRequestAdapter
     user_client: GraphServiceClient
 
@@ -29,7 +29,7 @@ class Graph:
         tenant_id = self.settings['tenantId']
         graph_scopes = self.settings['graphUserScopes'].split(' ')
 
-        self.device_code_credential = AsyncDeviceCodeCredential(client_id, tenant_id = tenant_id)
+        self.device_code_credential = DeviceCodeCredential(client_id, tenant_id = tenant_id)
         auth_provider = AzureIdentityAuthenticationProvider(
             self.device_code_credential,
             scopes=graph_scopes)
@@ -40,7 +40,7 @@ class Graph:
     # <GetUserTokenSnippet>
     async def get_user_token(self):
         graph_scopes = self.settings['graphUserScopes']
-        access_token = await self.device_code_credential.get_token(graph_scopes)
+        access_token = self.device_code_credential.get_token(graph_scopes)
         return access_token.token
     # </GetUserTokenSnippet>
 
