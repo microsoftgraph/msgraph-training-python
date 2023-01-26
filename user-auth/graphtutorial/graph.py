@@ -54,7 +54,7 @@ class Graph:
             query_parameters=query_params
         )
 
-        user = await self.user_client.me().get(request_configuration=request_config)
+        user = await self.user_client.me.get(request_configuration=request_config)
         return user
     # </GetUserSnippet>
 
@@ -72,7 +72,7 @@ class Graph:
             query_parameters= query_params
         )
 
-        messages = await self.user_client.me().mail_folders_by_id('inbox').messages().get(
+        messages = await self.user_client.me.mail_folders_by_id('inbox').messages.get(
                 request_configuration=request_config)
         return messages
     # </GetInboxSnippet>
@@ -95,11 +95,24 @@ class Graph:
         request_body = SendMailPostRequestBody()
         request_body.message = message
 
-        await self.user_client.me().send_mail().post(body=request_body)
+        await self.user_client.me.send_mail.post(body=request_body)
     # </SendMailSnippet>
 
     # <MakeGraphCallSnippet>
     async def make_graph_call(self):
         # INSERT YOUR CODE HERE
+        # Auth provider
+        #auth_provider = AzureIdentityAuthenticationProvider(...)
+
+        # Get default middleware
+        #middleware = GraphClientFactory.get_default_middleware()
+
+        # Add custom middleware
+        # Implement a custom middleware by extending the BaseMiddleware class
+        # https://github.com/microsoft/kiota-http-go/blob/main/kiota_http/middleware/middleware.py
+        #middleware.append(MyCustomMiddleware())
+
+        # Create an HTTP client with the middleware
+        #client = GraphClientFactory().create_with_custom_middleware(middleware)
         return
     # </MakeGraphCallSnippet>
