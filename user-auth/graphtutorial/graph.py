@@ -101,18 +101,5 @@ class Graph:
     # <MakeGraphCallSnippet>
     async def make_graph_call(self):
         # INSERT YOUR CODE HERE
-        # Auth provider
-        #auth_provider = AzureIdentityAuthenticationProvider(...)
-
-        # Get default middleware
-        #middleware = GraphClientFactory.get_default_middleware()
-
-        # Add custom middleware
-        # Implement a custom middleware by extending the BaseMiddleware class
-        # https://github.com/microsoft/kiota-http-go/blob/main/kiota_http/middleware/middleware.py
-        #middleware.append(MyCustomMiddleware())
-
-        # Create an HTTP client with the middleware
-        #client = GraphClientFactory().create_with_custom_middleware(middleware)
         return
     # </MakeGraphCallSnippet>
