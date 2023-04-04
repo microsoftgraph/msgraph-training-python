@@ -62,7 +62,7 @@ idna==3.4
     #   requests
     #   rfc3986
     #   yarl
-microsoft-kiota-abstractions==0.3.0
+microsoft-kiota-abstractions==0.5.0
     # via
     #   microsoft-kiota-authentication-azure
     #   microsoft-kiota-http
@@ -74,7 +74,7 @@ microsoft-kiota-authentication-azure==0.2.0
     # via msgraph-sdk
 microsoft-kiota-http==0.3.1
     # via msgraph-core
-microsoft-kiota-serialization-json==0.2.1
+microsoft-kiota-serialization-json==0.3.1
     # via msgraph-sdk
 microsoft-kiota-serialization-text==0.2.0
     # via msgraph-sdk
@@ -86,7 +86,7 @@ msal-extensions==1.0.0
     # via azure-identity
 msgraph-core==1.0.0a3
     # via msgraph-sdk
-msgraph-sdk==1.0.0a9
+msgraph-sdk==1.0.0a10
     # via -r requirements.in
 multidict==6.0.4
     # via
