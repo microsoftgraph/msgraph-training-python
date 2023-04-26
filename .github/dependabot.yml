@@ -1,15 +1,10 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
 version: 2
 updates:
-  - package-ecosystem: "pip" # See documentation for possible values
-    directory: "/user-auth/graphtutorial" # Location of package manifests
+  - package-ecosystem: "pip"
+    directory: "/user-auth/graphtutorial"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "pip" # See documentation for possible values
-    directory: "/app-auth/graphapponlytutorial" # Location of package manifests
+  - package-ecosystem: "pip"
+    directory: "/app-auth/graphapponlytutorial"
     schedule:
       interval: "weekly"
