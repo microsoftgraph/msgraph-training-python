@@ -4,8 +4,8 @@
 # <ProgramSnippet>
 import asyncio
 import configparser
-from graph import Graph
 from msgraph.generated.models.o_data_errors.o_data_error import ODataError
+from graph import Graph
 
 async def main():
     print('Python Graph Tutorial\n')
@@ -47,16 +47,16 @@ async def main():
                 await make_graph_call(graph)
             else:
                 print('Invalid choice!\n')
-        except ODataError as e:
+        except ODataError as odata_error:
             print('Error:')
-            if e.error is not None:
-                print(e.error.code, e.error.message)
+            if odata_error.error:
+                print(odata_error.error.code, odata_error.error.message)
 # </ProgramSnippet>
 
 # <GreetUserSnippet>
 async def greet_user(graph: Graph):
     user = await graph.get_user()
-    if user is not None:
+    if user:
         print('Hello,', user.display_name)
         # For Work/school accounts, email is in mail property
         # Personal accounts, email is in userPrincipalName
@@ -72,13 +72,13 @@ async def display_access_token(graph: Graph):
 # <ListInboxSnippet>
 async def list_inbox(graph: Graph):
     message_page = await graph.get_inbox()
-    if message_page is not None and message_page.value is not None:
+    if message_page and message_page.value:
         # Output each message's details
         for message in message_page.value:
             print('Message:', message.subject)
             if (
-                message.from_ is not None and
-                message.from_.email_address is not None
+                message.from_ and
+                message.from_.email_address
             ):
                 print('  From:', message.from_.email_address.name or 'NONE')
             else:
@@ -96,7 +96,7 @@ async def send_mail(graph: Graph):
     # Send mail to the signed-in user
     # Get the user for their email address
     user = await graph.get_user()
-    if user is not None:
+    if user:
         user_email = user.mail or user.user_principal_name
 
         await graph.send_mail('Testing Microsoft Graph', 'Hello world!', user_email or '')
