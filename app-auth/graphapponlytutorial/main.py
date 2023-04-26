@@ -4,6 +4,7 @@
 # <ProgramSnippet>
 import asyncio
 import configparser
+from msgraph.generated.models.o_data_errors.o_data_error import ODataError
 from graph import Graph
 
 async def main():
@@ -30,16 +31,21 @@ async def main():
         except ValueError:
             choice = -1
 
-        if choice == 0:
-            print('Goodbye...')
-        elif choice == 1:
-            await display_access_token(graph)
-        elif choice == 2:
-            await list_users(graph)
-        elif choice == 3:
-            await make_graph_call(graph)
-        else:
-            print('Invalid choice!\n')
+        try:
+            if choice == 0:
+                print('Goodbye...')
+            elif choice == 1:
+                await display_access_token(graph)
+            elif choice == 2:
+                await list_users(graph)
+            elif choice == 3:
+                await make_graph_call(graph)
+            else:
+                print('Invalid choice!\n')
+        except ODataError as odata_error:
+            print('Error:')
+            if odata_error.error:
+                print(odata_error.error.code, odata_error.error.message)
 # </ProgramSnippet>
 
 # <DisplayAccessTokenSnippet>
@@ -53,7 +59,7 @@ async def list_users(graph: Graph):
     users_page = await graph.get_users()
 
     # Output each users's details
-    if users_page is not None and users_page.value is not None:
+    if users_page and users_page.value:
         for user in users_page.value:
             print('User:', user.display_name)
             print('  ID:', user.id)
