@@ -72,7 +72,7 @@ class Graph:
             query_parameters= query_params
         )
 
-        messages = await self.user_client.me.mail_folders_by_id('inbox').messages.get(
+        messages = await self.user_client.me.mail_folders.by_mail_folder_id('inbox').messages.get(
                 request_configuration=request_config)
         return messages
     # </GetInboxSnippet>
