@@ -5,6 +5,7 @@
 import asyncio
 import configparser
 from graph import Graph
+from msgraph.generated.models.o_data_errors.o_data_error import ODataError
 
 async def main():
     print('Python Graph Tutorial\n')
@@ -33,18 +34,23 @@ async def main():
         except ValueError:
             choice = -1
 
-        if choice == 0:
-            print('Goodbye...')
-        elif choice == 1:
-            await display_access_token(graph)
-        elif choice == 2:
-            await list_inbox(graph)
-        elif choice == 3:
-            await send_mail(graph)
-        elif choice == 4:
-            await make_graph_call(graph)
-        else:
-            print('Invalid choice!\n')
+        try:
+            if choice == 0:
+                print('Goodbye...')
+            elif choice == 1:
+                await display_access_token(graph)
+            elif choice == 2:
+                await list_inbox(graph)
+            elif choice == 3:
+                await send_mail(graph)
+            elif choice == 4:
+                await make_graph_call(graph)
+            else:
+                print('Invalid choice!\n')
+        except ODataError as e:
+            print('Error:')
+            if e.error is not None:
+                print(e.error.code, e.error.message)
 # </ProgramSnippet>
 
 # <GreetUserSnippet>
