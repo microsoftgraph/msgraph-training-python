@@ -18,7 +18,7 @@ azure-core==1.26.2
     # via
     #   azure-identity
     #   microsoft-kiota-authentication-azure
-azure-identity==1.12.0
+azure-identity==1.13.0
     # via
     #   -r requirements.in
     #   msgraph-sdk
