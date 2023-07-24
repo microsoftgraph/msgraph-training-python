@@ -8,7 +8,8 @@ from msgraph import GraphServiceClient
 from msgraph.generated.users.item.user_item_request_builder import UserItemRequestBuilder
 from msgraph.generated.users.item.mail_folders.item.messages.messages_request_builder import (
     MessagesRequestBuilder)
-from msgraph.generated.users.item.send_mail.send_mail_post_request_body import SendMailPostRequestBody
+from msgraph.generated.users.item.send_mail.send_mail_post_request_body import (
+    SendMailPostRequestBody)
 from msgraph.generated.models.message import Message
 from msgraph.generated.models.item_body import ItemBody
 from msgraph.generated.models.body_type import BodyType
