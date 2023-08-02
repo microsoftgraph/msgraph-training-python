@@ -33,13 +33,11 @@ charset-normalizer==3.2.0
     # via
     #   aiohttp
     #   requests
-cryptography==41.0.2
+cryptography==41.0.3
     # via
     #   azure-identity
     #   msal
     #   pyjwt
-exceptiongroup==1.1.2
-    # via anyio
 frozenlist==1.4.0
     # via
     #   aiohttp
