@@ -4,16 +4,12 @@
 # <AppAuthConfigSnippet>
 from configparser import SectionProxy
 from azure.identity.aio import ClientSecretCredential
-from kiota_authentication_azure.azure_identity_authentication_provider import (
-    AzureIdentityAuthenticationProvider
-)
-from msgraph import GraphRequestAdapter, GraphServiceClient
+from msgraph import GraphServiceClient
 from msgraph.generated.users.users_request_builder import UsersRequestBuilder
 
 class Graph:
     settings: SectionProxy
     client_credential: ClientSecretCredential
-    adapter: GraphRequestAdapter
     app_client: GraphServiceClient
 
     def __init__(self, config: SectionProxy):
@@ -23,9 +19,7 @@ class Graph:
         client_secret = self.settings['clientSecret']
 
         self.client_credential = ClientSecretCredential(tenant_id, client_id, client_secret)
-        auth_provider = AzureIdentityAuthenticationProvider(self.client_credential) # type: ignore
-        self.adapter = GraphRequestAdapter(auth_provider)
-        self.app_client = GraphServiceClient(self.adapter)
+        self.app_client = GraphServiceClient(self.client_credential) # type: ignore
 # </AppAuthConfigSnippet>
 
     # <GetAppOnlyTokenSnippet>
