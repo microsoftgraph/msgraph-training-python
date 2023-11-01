@@ -4,21 +4,21 @@
 #
 #    pip-compile --output-file=requirements.txt --resolver=backtracking
 #
-aiohttp==3.8.5
+aiohttp==3.8.6
     # via microsoft-kiota-authentication-azure
 aiosignal==1.3.1
     # via aiohttp
-anyio==3.7.1
+anyio==4.0.0
     # via httpcore
-async-timeout==4.0.2
+async-timeout==4.0.3
     # via aiohttp
 attrs==23.1.0
     # via aiohttp
-azure-core==1.28.0
+azure-core==1.29.5
     # via
     #   azure-identity
     #   microsoft-kiota-authentication-azure
-azure-identity==1.13.0
+azure-identity==1.15.0
     # via
     #   -r requirements.in
     #   msgraph-sdk
@@ -27,17 +27,21 @@ certifi==2023.7.22
     #   httpcore
     #   httpx
     #   requests
-cffi==1.15.1
+cffi==1.16.0
     # via cryptography
-charset-normalizer==3.2.0
+charset-normalizer==3.3.2
     # via
     #   aiohttp
     #   requests
-cryptography==41.0.3
+cryptography==41.0.5
     # via
     #   azure-identity
     #   msal
     #   pyjwt
+deprecated==1.2.14
+    # via opentelemetry-api
+exceptiongroup==1.1.3
+    # via anyio
 frozenlist==1.4.0
     # via
     #   aiohttp
@@ -48,10 +52,11 @@ h2==4.1.0
     # via httpx
 hpack==4.0.0
     # via h2
-httpcore==0.17.3
+httpcore==0.18.0
     # via httpx
-httpx[http2]==0.24.1
+httpx[http2]==0.25.0
     # via
+    #   httpx
     #   microsoft-kiota-http
     #   msgraph-core
 hyperframe==6.0.1
@@ -62,7 +67,9 @@ idna==3.4
     #   httpx
     #   requests
     #   yarl
-microsoft-kiota-abstractions==0.6.0
+importlib-metadata==6.8.0
+    # via opentelemetry-api
+microsoft-kiota-abstractions==1.0.0
     # via
     #   microsoft-kiota-authentication-azure
     #   microsoft-kiota-http
@@ -70,15 +77,17 @@ microsoft-kiota-abstractions==0.6.0
     #   microsoft-kiota-serialization-text
     #   msgraph-core
     #   msgraph-sdk
-microsoft-kiota-authentication-azure==0.2.0
+microsoft-kiota-authentication-azure==1.0.0
     # via msgraph-sdk
-microsoft-kiota-http==0.4.4
-    # via msgraph-core
-microsoft-kiota-serialization-json==0.3.7
+microsoft-kiota-http==1.0.0
+    # via
+    #   msgraph-core
+    #   msgraph-sdk
+microsoft-kiota-serialization-json==1.0.0
     # via msgraph-sdk
-microsoft-kiota-serialization-text==0.2.1
+microsoft-kiota-serialization-text==1.0.0
     # via msgraph-sdk
-msal==1.23.0
+msal==1.24.1
     # via
     #   azure-identity
     #   msal-extensions
@@ -86,22 +95,41 @@ msal-extensions==1.0.0
     # via azure-identity
 msgraph-core==1.0.0a4
     # via msgraph-sdk
-msgraph-sdk==1.0.0a13
+msgraph-sdk==1.0.0
     # via -r requirements.in
 multidict==6.0.4
     # via
     #   aiohttp
     #   yarl
-portalocker==2.7.0
+opentelemetry-api==1.20.0
+    # via
+    #   microsoft-kiota-abstractions
+    #   microsoft-kiota-authentication-azure
+    #   microsoft-kiota-http
+    #   opentelemetry-sdk
+opentelemetry-sdk==1.20.0
+    # via
+    #   microsoft-kiota-abstractions
+    #   microsoft-kiota-authentication-azure
+    #   microsoft-kiota-http
+opentelemetry-semantic-conventions==0.41b0
+    # via opentelemetry-sdk
+pendulum==2.1.2
+    # via microsoft-kiota-serialization-json
+portalocker==2.8.2
     # via msal-extensions
 pycparser==2.21
     # via cffi
 pyjwt[crypto]==2.8.0
-    # via msal
+    # via
+    #   msal
+    #   pyjwt
 python-dateutil==2.8.2
     # via
-    #   microsoft-kiota-serialization-json
     #   microsoft-kiota-serialization-text
+    #   pendulum
+pytzdata==2020.1
+    # via pendulum
 requests==2.31.0
     # via
     #   azure-core
@@ -109,18 +137,23 @@ requests==2.31.0
 six==1.16.0
     # via
     #   azure-core
-    #   azure-identity
     #   python-dateutil
 sniffio==1.3.0
     # via
     #   anyio
     #   httpcore
     #   httpx
-typing-extensions==4.7.1
-    # via azure-core
-uritemplate==4.1.1
+std-uritemplate==0.0.46
     # via microsoft-kiota-abstractions
-urllib3==2.0.4
+typing-extensions==4.8.0
+    # via
+    #   azure-core
+    #   opentelemetry-sdk
+urllib3==2.0.7
     # via requests
+wrapt==1.15.0
+    # via deprecated
 yarl==1.9.2
     # via aiohttp
+zipp==3.17.0
+    # via importlib-metadata
