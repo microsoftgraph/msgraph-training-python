@@ -4,17 +4,17 @@
 #
 #    pip-compile --output-file=requirements.txt --resolver=backtracking
 #
-aiohttp==3.9.2
+aiohttp==3.9.3
     # via microsoft-kiota-authentication-azure
 aiosignal==1.3.1
     # via aiohttp
-anyio==4.0.0
-    # via httpcore
+anyio==4.3.0
+    # via httpx
 async-timeout==4.0.3
     # via aiohttp
-attrs==23.1.0
+attrs==23.2.0
     # via aiohttp
-azure-core==1.29.5
+azure-core==1.30.1
     # via
     #   azure-identity
     #   microsoft-kiota-authentication-azure
@@ -22,7 +22,7 @@ azure-identity==1.15.0
     # via
     #   -r requirements.in
     #   msgraph-sdk
-certifi==2023.7.22
+certifi==2024.2.2
     # via
     #   httpcore
     #   httpx
@@ -31,16 +31,16 @@ cffi==1.16.0
     # via cryptography
 charset-normalizer==3.3.2
     # via requests
-cryptography==42.0.4
+cryptography==42.0.5
     # via
     #   azure-identity
     #   msal
     #   pyjwt
 deprecated==1.2.14
     # via opentelemetry-api
-exceptiongroup==1.1.3
+exceptiongroup==1.2.0
     # via anyio
-frozenlist==1.4.0
+frozenlist==1.4.1
     # via
     #   aiohttp
     #   aiosignal
@@ -50,24 +50,24 @@ h2==4.1.0
     # via httpx
 hpack==4.0.0
     # via h2
-httpcore==0.18.0
+httpcore==1.0.4
     # via httpx
-httpx[http2]==0.25.0
+httpx[http2]==0.27.0
     # via
     #   httpx
     #   microsoft-kiota-http
     #   msgraph-core
 hyperframe==6.0.1
     # via h2
-idna==3.4
+idna==3.6
     # via
     #   anyio
     #   httpx
     #   requests
     #   yarl
-importlib-metadata==6.8.0
+importlib-metadata==6.11.0
     # via opentelemetry-api
-microsoft-kiota-abstractions==1.0.0
+microsoft-kiota-abstractions==1.3.1
     # via
     #   microsoft-kiota-authentication-azure
     #   microsoft-kiota-http
@@ -79,42 +79,44 @@ microsoft-kiota-authentication-azure==1.0.0
     # via
     #   msgraph-core
     #   msgraph-sdk
-microsoft-kiota-http==1.0.0
+microsoft-kiota-http==1.3.1
     # via
     #   msgraph-core
     #   msgraph-sdk
-microsoft-kiota-serialization-json==1.0.0
+microsoft-kiota-serialization-json==1.1.0
     # via msgraph-sdk
 microsoft-kiota-serialization-text==1.0.0
     # via msgraph-sdk
-msal==1.24.1
+msal==1.27.0
     # via
     #   azure-identity
     #   msal-extensions
-msal-extensions==1.0.0
+msal-extensions==1.1.0
     # via azure-identity
 msgraph-core==1.0.0
     # via msgraph-sdk
 msgraph-sdk==1.1.0
     # via -r requirements.in
-multidict==6.0.4
+multidict==6.0.5
     # via
     #   aiohttp
     #   yarl
-opentelemetry-api==1.20.0
+opentelemetry-api==1.23.0
     # via
     #   microsoft-kiota-abstractions
     #   microsoft-kiota-authentication-azure
     #   microsoft-kiota-http
     #   opentelemetry-sdk
-opentelemetry-sdk==1.20.0
+opentelemetry-sdk==1.23.0
     # via
     #   microsoft-kiota-abstractions
     #   microsoft-kiota-authentication-azure
     #   microsoft-kiota-http
-opentelemetry-semantic-conventions==0.41b0
+opentelemetry-semantic-conventions==0.44b0
     # via opentelemetry-sdk
-pendulum==2.1.2
+packaging==24.0
+    # via msal-extensions
+pendulum==3.0.0
     # via microsoft-kiota-serialization-json
 portalocker==2.8.2
     # via msal-extensions
@@ -124,12 +126,11 @@ pyjwt[crypto]==2.8.0
     # via
     #   msal
     #   pyjwt
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
     # via
     #   microsoft-kiota-serialization-text
     #   pendulum
-pytzdata==2020.1
-    # via pendulum
+    #   time-machine
 requests==2.31.0
     # via
     #   azure-core
@@ -138,22 +139,26 @@ six==1.16.0
     # via
     #   azure-core
     #   python-dateutil
-sniffio==1.3.0
+sniffio==1.3.1
     # via
     #   anyio
-    #   httpcore
     #   httpx
-std-uritemplate==0.0.46
+std-uritemplate==0.0.54
     # via microsoft-kiota-abstractions
-typing-extensions==4.8.0
+time-machine==2.14.0
+    # via pendulum
+typing-extensions==4.10.0
     # via
+    #   anyio
     #   azure-core
     #   opentelemetry-sdk
-urllib3==2.0.7
+tzdata==2024.1
+    # via pendulum
+urllib3==2.2.1
     # via requests
-wrapt==1.15.0
+wrapt==1.16.0
     # via deprecated
-yarl==1.9.2
+yarl==1.9.4
     # via aiohttp
-zipp==3.17.0
+zipp==3.18.0
     # via importlib-metadata
