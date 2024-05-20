@@ -138,7 +138,7 @@ python-dateutil==2.9.0.post0
     #   microsoft-kiota-serialization-text
     #   pendulum
     #   time-machine
-requests==2.31.0
+requests==2.32.0
     # via
     #   azure-core
     #   msal
