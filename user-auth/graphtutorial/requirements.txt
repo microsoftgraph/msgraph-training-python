@@ -92,7 +92,7 @@ microsoft-kiota-serialization-multipart==0.1.0
     # via msgraph-sdk
 microsoft-kiota-serialization-text==1.0.0
     # via msgraph-sdk
-msal==1.27.0
+msal==1.28.0
     # via
     #   azure-identity
     #   msal-extensions
