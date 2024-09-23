@@ -16,11 +16,11 @@ async-timeout==4.0.3
     # via aiohttp
 attrs==23.2.0
     # via aiohttp
-azure-core==1.30.1
+azure-core==1.31.0
     # via
     #   azure-identity
     #   microsoft-kiota-authentication-azure
-azure-identity==1.17.1
+azure-identity==1.18.0
     # via
     #   -r requirements.in
     #   msgraph-sdk
@@ -94,11 +94,11 @@ microsoft-kiota-serialization-multipart==0.1.0
     # via msgraph-sdk
 microsoft-kiota-serialization-text==1.0.0
     # via msgraph-sdk
-msal==1.28.0
+msal==1.31.0
     # via
     #   azure-identity
     #   msal-extensions
-msal-extensions==1.1.0
+msal-extensions==1.2.0
     # via azure-identity
 msgraph-core==1.0.0
     # via msgraph-sdk
@@ -121,8 +121,6 @@ opentelemetry-sdk==1.23.0
     #   microsoft-kiota-http
 opentelemetry-semantic-conventions==0.44b0
     # via opentelemetry-sdk
-packaging==24.0
-    # via msal-extensions
 pendulum==3.0.0
     # via
     #   microsoft-kiota-serialization-form
