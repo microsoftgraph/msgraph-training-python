@@ -102,7 +102,7 @@ msal-extensions==1.2.0
     # via azure-identity
 msgraph-core==1.0.0
     # via msgraph-sdk
-msgraph-sdk==1.10.0
+msgraph-sdk==1.11.0
     # via -r requirements.in
 multidict==6.0.5
     # via
