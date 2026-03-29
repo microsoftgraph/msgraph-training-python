@@ -29,11 +29,11 @@ certifi==2025.8.3
     #   httpcore
     #   httpx
     #   requests
-cffi==1.17.1
+cffi==2.0.0
     # via cryptography
 charset-normalizer==3.4.3
     # via requests
-cryptography==45.0.7
+cryptography==46.0.6
     # via
     #   azure-identity
     #   msal
@@ -139,6 +139,7 @@ typing-extensions==4.15.0
     #   anyio
     #   azure-core
     #   azure-identity
+    #   cryptography
     #   exceptiongroup
     #   multidict
     #   opentelemetry-api
