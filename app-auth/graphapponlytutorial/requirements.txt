@@ -6,7 +6,7 @@
 #
 aiohappyeyeballs==2.6.1
     # via aiohttp
-aiohttp==3.14.3
+aiohttp==3.14.4
     # via microsoft-kiota-authentication-azure
 aiosignal==1.4.0
     # via aiohttp
@@ -147,7 +147,7 @@ typing-extensions==4.15.0
     #   pyjwt
 urllib3==2.8.0
     # via requests
-yarl==1.20.1
+yarl==1.25.1
     # via aiohttp
 zipp==3.23.0
     # via importlib-metadata
