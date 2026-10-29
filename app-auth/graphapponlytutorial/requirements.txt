@@ -24,7 +24,7 @@ azure-identity==1.26.0
     # via
     #   -r requirements.in
     #   msgraph-sdk
-certifi==2025.8.3
+certifi==2026.10.19
     # via
     #   httpcore
     #   httpx
