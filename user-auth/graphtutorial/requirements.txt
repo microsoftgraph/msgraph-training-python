@@ -6,11 +6,11 @@
 #
 aiohappyeyeballs==2.6.1
     # via aiohttp
-aiohttp==3.14.3
+aiohttp==3.14.4
     # via microsoft-kiota-authentication-azure
 aiosignal==1.4.0
     # via aiohttp
-anyio==4.10.0
+anyio==4.14.2
     # via httpx
 async-timeout==5.0.1
     # via aiohttp
@@ -20,7 +20,7 @@ azure-core==1.38.0
     # via
     #   azure-identity
     #   microsoft-kiota-authentication-azure
-azure-identity==1.25.3
+azure-identity==1.26.0
     # via
     #   -r requirements.in
     #   msgraph-sdk
@@ -87,7 +87,7 @@ microsoft-kiota-serialization-multipart==1.9.6
     # via msgraph-sdk
 microsoft-kiota-serialization-text==1.9.6
     # via msgraph-sdk
-msal==1.35.1
+msal==1.39.0
     # via
     #   azure-identity
     #   msal-extensions
@@ -121,7 +121,7 @@ propcache==0.3.2
     #   yarl
 pycparser==2.22
     # via cffi
-pyjwt[crypto]==2.13.0
+pyjwt[crypto]==2.15.0
     # via
     #   msal
     #   pyjwt
@@ -129,8 +129,6 @@ requests==2.33.0
     # via
     #   azure-core
     #   msal
-sniffio==1.3.1
-    # via anyio
 std-uritemplate==2.0.5
     # via microsoft-kiota-abstractions
 typing-extensions==4.15.0
@@ -147,9 +145,9 @@ typing-extensions==4.15.0
     #   opentelemetry-sdk
     #   opentelemetry-semantic-conventions
     #   pyjwt
-urllib3==2.7.0
+urllib3==2.8.0
     # via requests
-yarl==1.20.1
+yarl==1.25.1
     # via aiohttp
 zipp==3.23.0
     # via importlib-metadata
